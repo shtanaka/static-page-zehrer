@@ -89,7 +89,7 @@ async function runSetup() {
     fs.writeFile(path.join(ROOT, '/src/stylesheets/styles.scss'), cssContent, (err) => {});
   }
 
-  // Add jQuery to scripts
+  // Add jQuery to index
   if (questions.jquery == 'Yes') {
     const jsContent =
       '// Load jQuery from NPM\n'
@@ -97,7 +97,7 @@ async function runSetup() {
       + 'window.jQuery = $;\n'
       + 'window.$ = $;\n';
 
-    fs.writeFile(path.join(ROOT, '/src/javascripts/scripts.js'), jsContent, (err) => {});
+    fs.writeFile(path.join(ROOT, '/src/javascripts/index.js'), jsContent, (err) => {});
   }
 };
 
