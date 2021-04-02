@@ -15,7 +15,7 @@ const config = {
   site_description: 'Static webpage using Static Site Boilerplate',
 
   // Your website's URL, used for sitemap
-  site_url: 'http://gs.eti.br/spz.html',
+  site_url: 'http://gs.eti.br/static-page-zehrer',
 
   // Google Analytics tracking ID (leave blank to disable)
   googleAnalyticsUA: '',
