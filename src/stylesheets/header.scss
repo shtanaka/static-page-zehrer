@@ -1,4 +1,5 @@
 @import "./colors.scss";
+@import "./animations.scss";
 
 .top-banner {
   display: flex;
@@ -42,13 +43,11 @@ header {
         position: relative;
 
         .open-icon {
-          opacity: 1;
-          transition: 0.5s;
+          display: block;
         }
 
         .close-icon {
-          opacity: 0;
-          transition: 0.5s;
+          display: none;
           margin: auto;
           position: absolute;
           top: 0;
@@ -63,7 +62,8 @@ header {
           }
 
           .close-icon {
-            opacity: 1;
+            display: block;
+            animation: fadeIn 0.5s;
           }
         }
       }
@@ -77,13 +77,17 @@ header {
   }
 
   #burgerContainer {
-    opacity: 0;
-    transition: 0.5s;
+    display: none;
     position: absolute;
     z-index: 0;
     background: white;
     box-shadow: $rightBoxShadow;
     width: 258px;
+
+    &.active {
+      display: block;
+      animation: fadeIn 0.5s;
+    }
 
     .burger-content {
       display: flex;
@@ -101,9 +105,54 @@ header {
         padding: 20px 0;
       }
     }
+  }
+
+  #searchBarContainer {
+    position: absolute;
+    height: 78px;
+    width: 100%;
+    left: 0;
+    background: $white;
+    display: none;
 
     &.active {
-      opacity: 1;
+      display: block;
+      animation: fadeIn 0.5s;
+    }
+
+    .search-bar-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 0 18px;
+      height: 100%;
+
+      input {
+        border: none;
+        margin: 5px 9px 0 0;
+        padding: 0 5px 0 30px;
+        width: 100%;
+        line-height: 32px;
+        letter-spacing: 0.05em;
+        margin-right: 25px;
+        border-bottom: 1px solid rgba(0, 0, 0, 1);
+
+        &::placeholder {
+          color: $black;
+          letter-spacing: 0.05em;
+        }
+      }
+
+      .search-input-icon {
+        position: absolute;
+        width: 17px;
+        height: 17px;
+        left: 19px;
+      }
+    }
+
+    .close-icon {
+      height: 28px;
     }
   }
 }

@@ -12,10 +12,28 @@ $(() => {
     $burgerContent.toggleClass('active');
   };
 
+  const toggleSearchBar = () => {
+    const $searchBar = $('#searchBarContainer');
+    const $searchInput = $('#searchInput');
+    const inputTrigger = $searchInput.is(':focus') ? 'blur' : 'focus';
+
+    $searchBar.toggleClass('active');
+    $searchInput.trigger(inputTrigger);
+  };
+
   const addBurgerEvents = () => {
     const $burgerButton = $('#burgerButton');
     $burgerButton.on('click', toggleBurgerMenu);
   };
 
+  const addSearchBarEvents = () => {
+    const $searchButton = $('#searchButton');
+    const $closeSearchButton = $('#closeSearchButton');
+
+    $searchButton.on('click', toggleSearchBar);
+    $closeSearchButton.on('click', toggleSearchBar);
+  };
+
   addBurgerEvents();
+  addSearchBarEvents();
 });

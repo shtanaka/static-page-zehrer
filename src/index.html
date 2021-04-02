@@ -8,11 +8,12 @@
 </head>
 
 <body>
-    
+
     <header>
         <div class="top-banner">
             <span>Free shipping on orders over $49</span>
         </div>
+
         <nav>
             <div class="left-nav-container mobile">
                 <button type="button" id="burgerButton" class="icon-button">
@@ -23,9 +24,22 @@
             </div>
 
             <div class="logo-container"><img src="images/svgs/logo.svg" /></div>
+
             <div class="right-nav-container mobile">
-                <button type="button" class="icon-button"><img src="images/svgs/Search.svg" /></button>
+                <button type="button" id="searchButton" class="icon-button">
+                    <img src="images/svgs/Search.svg" />
+                </button>
                 <button type="button" class="icon-button"><img src="images/svgs/Cart.svg" /></button>
+            </div>
+
+            <div id="searchBarContainer">
+                <div class="search-bar-content">
+                    <img src="images/svgs/Search.svg" class="search-input-icon" />
+                    <input type="text" id="searchInput" placeholder="Search..." />
+                    <button type="button" id="closeSearchButton" class="icon-button">
+                        <img class="close-icon" src="images/svgs/X.svg" />
+                    </button>
+                </div>
             </div>
         </nav>
 
