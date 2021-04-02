@@ -1,5 +1,6 @@
 @import "./colors.scss";
 @import "./animations.scss";
+@import "./mixins.scss";
 
 .top-banner {
   display: flex;
@@ -19,57 +20,120 @@ header {
   position: relative;
 
   nav {
-    position: relative;
     z-index: 1;
-    display: flex;
-    height: 78px;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 18px;
     background: $white;
     box-shadow: $bottomBoxShadow;
-
-    .icon-button {
-      border: none;
-      background: transparent;
-      padding: 8px;
+    
+    .content {
+      margin: auto;
+      max-width: 1350px;
+      position: relative;
+      display: flex;
+      height: 78px;
+      align-items: center;
+      padding: 0 18px;
     }
 
-    .left-nav-container {
-      display: flex;
-      position: relative;
-
-      #burgerButton {
+    .left-nav-container-mobile {
+      display: none;
+      
+      @include laptopdown {
+        margin-right: auto;
+        display: flex;
+        flex: 1;
         position: relative;
 
-        .open-icon {
-          display: block;
-        }
+        #burgerButton {
+          position: relative;
 
-        .close-icon {
-          display: none;
-          margin: auto;
-          position: absolute;
-          top: 0;
-          left: 0;
-          bottom: 0;
-          right: 0;
-        }
-
-        &.active {
           .open-icon {
-            opacity: 0;
+            display: block;
           }
 
           .close-icon {
-            display: block;
-            animation: fadeIn 0.5s;
+            display: none;
+            margin: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+          }
+
+          &.active {
+            .open-icon {
+              opacity: 0;
+            }
+
+            .close-icon {
+              display: block;
+              animation: fadeIn 0.5s;
+            }
+          }
+        }
+      }
+    }
+
+    .right-nav-container-mobile {
+      display: none;
+
+      @include laptopdown {
+        
+        display: flex;
+        flex: 1;
+      }
+      
+      :first-child {
+        margin-left: auto;
+      }
+    }
+
+    .left-nav-container,
+    .right-nav-container {
+      display: none;
+
+      @include desktop {
+        display: flex;
+        flex: 1;
+        button {
+          font-size: 15px;
+          font-weight: 700;
+          line-height: 18px;
+          letter-spacing: 0.05em;
+        }
+      }
+    }
+
+    .left-nav-container {
+      button {
+        @include desktop {
+          &:not(:last-child) {
+            margin-right: 70px;
+          }
+          &:last-child {
+            margin-right: auto;
+          }
+        }
+      }
+    }
+
+    .right-nav-container {
+      button {
+        @include desktop {
+          &:not(:last-child) {
+            margin-right: 40px;
+          }
+          &:first-child {
+            margin-left: auto;
           }
         }
       }
     }
 
     .logo-container {
+      display: flex;
+      justify-content: center;
+      flex: 0.3;
       img {
         height: 28px;
       }

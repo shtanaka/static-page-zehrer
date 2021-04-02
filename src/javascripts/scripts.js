@@ -27,7 +27,7 @@ $(() => {
   };
 
   const addSearchBarEvents = () => {
-    const $searchButton = $('#searchButton');
+    const $searchButton = $('.search-button');
     const $closeSearchButton = $('#closeSearchButton');
 
     $searchButton.on('click', toggleSearchBar);
