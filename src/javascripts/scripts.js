@@ -4,6 +4,18 @@ window.jQuery = $;
 window.$ = $;
 
 $(() => {
-  // eslint-disable-next-line no-console
-  console.log('Hello World!');
+  const toggleBurgerMenu = () => {
+    const $burgerButton = $('#burgerButton');
+    const $burgerContent = $('#burgerContainer');
+
+    $burgerButton.toggleClass('active');
+    $burgerContent.toggleClass('active');
+  };
+
+  const addBurgerEvents = () => {
+    const $burgerButton = $('#burgerButton');
+    $burgerButton.on('click', toggleBurgerMenu);
+  };
+
+  addBurgerEvents();
 });

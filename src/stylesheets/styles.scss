@@ -1,26 +1,4 @@
 // Load CSS Reset from NPM
 @import "./reset.css";
-
-@font-face {
-  font-family: 'Century Gothic';
-  src: url('./fonts/century-gothic.ttf') format('truetype');
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: 'Century Gothic';
-  src: url('./fonts/century-gothic-bold.ttf') format('truetype');
-  font-weight: 700;
-}
-
-body {
-  font-family: Century Gothic, serif;
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 400;
-}
-
-h1 {
-  font-weight: 700;
-  letter-spacing: 0.05em;
-}
+@import "./global.scss";
+@import "./header.scss";
