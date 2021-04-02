@@ -23,7 +23,7 @@ header {
     z-index: 1;
     background: $white;
     box-shadow: $bottomBoxShadow;
-    
+
     .content {
       margin: auto;
       max-width: 1350px;
@@ -36,7 +36,7 @@ header {
 
     .left-nav-container-mobile {
       display: none;
-      
+
       @include laptopdown {
         margin-right: auto;
         display: flex;
@@ -78,11 +78,10 @@ header {
       display: none;
 
       @include laptopdown {
-        
         display: flex;
         flex: 1;
       }
-      
+
       :first-child {
         margin-left: auto;
       }
@@ -95,6 +94,7 @@ header {
       @include desktop {
         display: flex;
         flex: 1;
+
         button {
           font-size: 15px;
           font-weight: 700;
@@ -110,6 +110,7 @@ header {
           &:not(:last-child) {
             margin-right: 70px;
           }
+
           &:last-child {
             margin-right: auto;
           }
@@ -123,6 +124,7 @@ header {
           &:not(:last-child) {
             margin-right: 40px;
           }
+
           &:first-child {
             margin-left: auto;
           }
@@ -134,6 +136,7 @@ header {
       display: flex;
       justify-content: center;
       flex: 0.3;
+
       img {
         height: 28px;
       }
